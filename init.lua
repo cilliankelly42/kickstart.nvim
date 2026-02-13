@@ -120,9 +120,7 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 
 vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
 
-vim.keymap.set('n', '<leader>kw', function()
-  vim.cmd [[%s/\s\+$//e]]
-end, { desc = 'Clear Trailing whitespaces' })
+vim.keymap.set('n', '<leader>kw', function() vim.cmd [[%s/\s\+$//e]] end, { desc = 'Clear Trailing whitespaces' })
 
 vim.keymap.set('n', '<leader>fd', '<cmd>GrepInDirectory<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>fid', '<cmd>FileInDirectory<CR>', { noremap = true, silent = true })
@@ -201,12 +199,10 @@ require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   {
     'NMAC427/guess-indent.nvim', -- Detect tabstop and shiftwidth automatically
-    config = function()
-      require('guess-indent').setup {}
-    end,
+    config = function() require('guess-indent').setup {} end,
   },
 
-  { 
+  {
     'lewis6991/gitsigns.nvim',
     opts = {
       signs = {
@@ -221,9 +217,7 @@ require('lazy').setup({
 
   {
     'b3nj5m1n/kommentary',
-    config = function()
-      require('kommentary.config').use_extended_mappings()
-    end,
+    config = function() require('kommentary.config').use_extended_mappings() end,
   },
 
   {
@@ -435,6 +429,7 @@ require('lazy').setup({
       -- Mason must be loaded before its dependents so we need to set it up here.
       -- NOTE: `opts = {}` is the same as calling `require('mason').setup({})`
       { 'mason-org/mason.nvim', opts = {} },
+      { 'mason-org/mason-lspconfig.nvim', opts = {} },
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 
       -- Useful status updates for LSP.
