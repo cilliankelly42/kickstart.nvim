@@ -181,7 +181,6 @@ vim.opt.softtabstop = 4
 vim.opt.expandtab = true
 
 require('lazy').setup({
-<<<<<<< HEAD
   -- NOTE: Plugins can be added via a link or github org/name. To run setup automatically, use `opts = {}`
   { 'NMAC427/guess-indent.nvim', opts = {} },
 
@@ -199,7 +198,6 @@ require('lazy').setup({
   -- Here is a more advanced example where we pass configuration
   -- options to `gitsigns.nvim`.
   --
-=======
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   {
     'NMAC427/guess-indent.nvim', -- Detect tabstop and shiftwidth automatically
@@ -208,9 +206,7 @@ require('lazy').setup({
     end,
   },
 
->>>>>>> 95c2d16 (INitial)
-  -- See `:help gitsigns` to understand what the configuration keys do
-  { -- Adds git related signs to the gutter, as well as utilities for managing changes
+  { 
     'lewis6991/gitsigns.nvim',
     opts = {
       signs = {
@@ -419,8 +415,6 @@ require('lazy').setup({
   },
   -- LSP Plugins
   {
-<<<<<<< HEAD
-=======
     -- `lazydev` configures Lua LSP for your Neovim config, runtime and plugins
     -- used for completion, annotations and signatures of Neovim apis
     'folke/lazydev.nvim',
@@ -434,7 +428,6 @@ require('lazy').setup({
   },
 
   {
->>>>>>> 95c2d16 (INitial)
     -- Main LSP Configuration
     'neovim/nvim-lspconfig',
     dependencies = {
@@ -516,7 +509,6 @@ require('lazy').setup({
       --  So, we create new capabilities with blink.cmp, and then broadcast that to the servers.
       local capabilities = require('blink.cmp').get_lsp_capabilities()
 
-<<<<<<< HEAD
       -- Enable the following language servers
       --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
       --  See `:help lsp-config` for information about keys and how to configure
@@ -540,7 +532,6 @@ require('lazy').setup({
       --    :Mason
       --
       -- You can press `g?` for help in this menu.
-=======
       local servers = {
         clangd = {},
 
@@ -834,7 +825,6 @@ require('lazy').setup({
 
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
-<<<<<<< HEAD
     config = function()
       local filetypes = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' }
       require('nvim-treesitter').install(filetypes)
@@ -843,7 +833,6 @@ require('lazy').setup({
         callback = function() vim.treesitter.start() end,
       })
     end,
-=======
     build = ':TSUpdate',
     main = 'nvim-treesitter.config', -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
